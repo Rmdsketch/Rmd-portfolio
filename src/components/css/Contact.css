@@ -1,0 +1,239 @@
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 0 !important;
+    margin: 0 40px 0 40px !important;
+    min-height: 550px;
+}
+
+.contact-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 300px;
+    padding-top: 20px;
+}
+
+.contact-left h3 {
+    font-family: 'Archivo', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 50px;
+    margin: 0px;
+    color: var(--text-color);
+}
+
+.contact-left h4 {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.contact-right {
+    display: block;
+    width: 750px;
+    height: 550px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.contact-right::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contact-right::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.contact-right::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+.contact-right::-webkit-scrollbar-thumb:hover {
+    background: var(--first-color);
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.contact-item:hover {
+    border-color: var(--first-color);
+    transform: translateY(-5px);
+}
+
+.contact-item h3 {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-color);
+}
+
+.contact-item p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.btn-copy,
+.btn-direct {
+    background-color: var(--first-color);
+    color: #fff !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: .3s;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn-copy:hover,
+.btn-direct:hover {
+    background-color: #164f6e;
+    transform: translateY(-2px);
+}
+
+.hire-me-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hire-me-header h3 {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.hire-me-header p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.hire-me-form label {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.hire-me-form .form-control {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: var(--text-color);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+}
+
+.hire-me-form .form-control:focus {
+    background-color: var(--bg-color);
+    border-color: var(--first-color);
+    box-shadow: 0 0 0 0.2rem rgba(28, 101, 140, 0.2);
+    color: var(--text-color);
+}
+
+.btn-send {
+    background-color: #87a2b6;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: .3s;
+    margin-top: 10px;
+}
+
+.btn-send:hover {
+    background-color: #768fa1;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1400px) {
+    .contact-wrapper {
+        margin: 0 20px 0 20px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contact-wrapper {
+        margin: 0 30px 0 30px !important;
+        flex-direction: column !important;
+        justify-content: start;
+    }
+
+    .contact-left {
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-left h3 {
+        font-size: 40px;
+    }
+
+    .contact-left h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-wrapper {
+        margin: 0 15px 0 15px !important;
+    }
+
+    .hire-me-card {
+        padding: 20px;
+    }
+}

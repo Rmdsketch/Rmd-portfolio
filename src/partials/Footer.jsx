@@ -1,12 +1,12 @@
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
-import "./CSS/Footer.css";
+import "./css/Footer.css";
 
 function Footer() {
   return (
     <>
       <footer className="px-4">
         <div className="foot-left d-flex">
-          <p>Muhamad Ramadani &copy; 2025</p>
+          <p>Muhamad Ramadani &copy; 2026</p>
         </div>
         <div className="foot-right d-flex">
           <a
@@ -18,7 +18,7 @@ function Footer() {
             &nbsp;&nbsp;GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/muhamad-ramadani-937976245/"
+            href="https://www.linkedin.com/in/muhamad-ramadani/"
             target="_blank"
             rel="noreferrer"
           >

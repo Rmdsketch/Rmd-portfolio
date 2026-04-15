@@ -10,26 +10,27 @@ footer {
     justify-content: space-between;
 }
 
-.foot-right, .foot-left {
+.foot-right,
+.foot-left {
     font-family: 'Manrope', sans-serif;
     font-size: 14px;
 }
 
 .foot-left p {
-    color: #000;
+    color: var(--text-color);
     margin-bottom: 0;
     padding: 8px;
     cursor: default;
 }
 
 .foot-right a {
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
     padding: 8px;
 }
 
 .foot-right a:hover {
-    color: #000;
+    color: var(--first-color);
 }
 
 .foot-icon {

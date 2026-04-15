@@ -1,8 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import "./CSS/NavBot.css";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
+import "./css/NavBot.css";
 
 function NavBot() {
+  const { language } = useLanguage();
+  const t = translations[language].nav;
+
   var numberPage;
   var titlePage;
   var directUp;
@@ -12,23 +17,23 @@ function NavBot() {
   switch (pathname) {
     case "/":
       numberPage = "01";
-      titlePage = "Home";
+      titlePage = t.home;
       break;
     case "/about":
       numberPage = "02";
-      titlePage = "About";
+      titlePage = t.about;
       break;
     case "/skills":
       numberPage = "03";
-      titlePage = "Skills";
+      titlePage = t.skills;
       break;
     case "/projects":
       numberPage = "04";
-      titlePage = "Projects";
+      titlePage = t.projects;
       break;
     case "/contact":
       numberPage = "05";
-      titlePage = "Contact";
+      titlePage = t.contact;
       break;
     default:
   }

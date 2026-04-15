@@ -24,7 +24,7 @@ footer.navbot {
 .navbot-title {
   font-family: "Manrope", sans-serif;
   font-weight: bold;
-  color: #000;
+  color: var(--text-color);
 }
 
 @media (max-width: 992px) {

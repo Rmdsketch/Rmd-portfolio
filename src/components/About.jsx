@@ -1,77 +1,59 @@
-import FsLightbox from 'fslightbox-react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Container } from 'react-bootstrap';
-import { useState } from 'react';
-import './CSS/About.css';
-import certificateImages from '../assets/Routes/AllCertificate';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
+import './css/About.css';
 
 function About() {
-  const [lightboxController, setLightboxController] = useState({
-    toggler: false,
-    slide: 1,
-  });
-
-  function openLightboxOnSlide(number) {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      slide: number,
-    });
-  }
+  const { language } = useLanguage();
+  const t = translations[language].about;
+  const navT = translations[language].nav;
 
   return (
     <>
-      <HelmetProvider>
-        <Helmet>
-          <title>Muhamad Ramadani - About</title>
-        </Helmet>
-      </HelmetProvider>
-      <FsLightbox
-        toggler={lightboxController.toggler}
-        sources={certificateImages}
-        slide={lightboxController.slide}
-      />
       <Container fluid className="about-wrapper">
         <div className="about-left animate__animated animate__zoomIn">
-          <h3>About</h3>
+          <h3>{t.title}</h3>
           <h4>
-            ───&nbsp;&nbsp;Page <strong>02</strong>
+            ───&nbsp;&nbsp;{navT.page} <strong>02</strong>
           </h4>
         </div>
-        <div className="about-right animate__animated animate__fadeIn animate__slower py-3">
-          <p>
-            Hello, my name is Muhamad Ramadani. I am an Informatics student at
-            Jenderal Achmad Yani Yogyakarta University. I have a strong interest
-            in the field of Fullstack Development and possess a comprehensive
-            understanding of web development processes. I have experience
-            developing fullstack web applications using Python and am currently
-            deepening my knowledge of web development with the MERN Stack, which
-            includes MongoDB, Express.js, React.js, and Node.js.
+
+        <div className="about-right">
+          <p className="animate__animated animate__fadeIn">
+            {t.halo}
           </p>
 
-          <h4>Certificates</h4>
-          <span>─────</span>
-          <div className="certificates-wrapper">
-            {certificateImages
-              .reduce((rows, src, index) => {
-                if (index % 3 === 0) rows.push([]);
-                rows[rows.length - 1].push(
-                  <div className="col certificates-ratio gap-image" key={src}>
-                    <img
-                      className="shadow"
-                      loading="lazy"
-                      src={src}
-                      alt={`Certificate ${index + 1}`}
-                      onClick={() => openLightboxOnSlide(index + 1)}
-                    />
-                  </div>
-                );
-                return rows;
-              }, [])
-              .map((row, index) => (
-                <div className="row my-4" key={index}>
-                  {row}
+          <div className="experience-section mt-5 animate__animated animate__fadeInUp">
+            <h3 className="section-title">{t.exp_title}</h3>
+            <div className="experience-container mt-4">
+              <div className="experience-item">
+                <div className="exp-dot"></div>
+                <div className="exp-content">
+                  <h4>{t.exp_1.role}</h4>
+                  <p className="company">{t.exp_1.comp}</p>
+                  <p className="duration">{t.exp_1.dur}</p>
+                  <ul className="exp-details">
+                    {t.exp_1.det.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
+              </div>
+
+              <div className="experience-item">
+                <div className="exp-dot"></div>
+                <div className="exp-content">
+                  <h4>{t.exp_2.role}</h4>
+                  <p className="company">{t.exp_2.comp}</p>
+                  <p className="duration">{t.exp_2.dur}</p>
+                  <ul className="exp-details">
+                    {t.exp_2.det.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

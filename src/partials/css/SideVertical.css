@@ -26,11 +26,11 @@
 }
 
 a.arrow {
-  color: #000;
+  color: var(--text-color);
 }
 
 a.arrow:hover {
-  color: #000;
+  color: var(--first-color);
 }
 
 .side-title,

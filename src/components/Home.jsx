@@ -7,9 +7,14 @@ import hoverProfile from "../assets/img/profile-hover.webp";
 import CVDoc from "../assets/download/CV.pdf";
 import Hi from "../assets/img/Hi.gif";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import "./CSS/Home.css";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
+import "./css/Home.css";
 
 function Home() {
+  const { language } = useLanguage();
+  const t = translations[language].home;
+
   function setProfile() {
     setImage(hoverProfile);
   }
@@ -28,7 +33,7 @@ function Home() {
       <Container fluid className="home-wrapper">
         <div className="home-left animate__animated animate__fadeInLeft">
           <h3>
-            Hi there <img width="35" src={Hi} alt="Hi" />, my name is
+            {t.hi} <img width="35" src={Hi} alt="Hi" />, {t.name}
           </h3>
           <h2>
             <span className="name-hover">Muhamad</span>
@@ -36,7 +41,7 @@ function Home() {
             <span className="name-hover">Ramadani</span>
           </h2>
           <NavLink to="/contact" className="btn-download text-center">
-            Let's Connect
+            {t.connect}
           </NavLink>
           <a
             href={CVDoc}
@@ -45,18 +50,18 @@ function Home() {
             style={{ marginTop: "10px" }}
           >
             <AiFillFileText className="cv-icon" />
-            &nbsp;&nbsp;Download CV
+            &nbsp;&nbsp;{t.download_cv}
           </a>
         </div>
-          <div className="home-right animate__animated animate__fadeInRight">
-            <img
-              className="home-image"
-              src={image}
-              onMouseOver={setProfile}
-              onMouseOut={setProfileAnimation}
-              alt="Profile"
-            />
-          </div>
+        <div className="home-right animate__animated animate__fadeInRight">
+          <img
+            className="home-image"
+            src={image}
+            onMouseOver={setProfile}
+            onMouseOut={setProfileAnimation}
+            alt="Profile"
+          />
+        </div>
       </Container>
     </>
   );

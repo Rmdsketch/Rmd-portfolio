@@ -2,11 +2,26 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { FaAlignRight } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
-import { useState } from "react";
-import "./CSS/NavTop.css";
+import { MdDarkMode, MdLightMode, MdTranslate } from "react-icons/md";
+import { useState, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
+import "./css/NavTop.css";
 
 function NavTop() {
   const [toogleMenu, setToogleMenu] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language].nav;
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   function toogleOpen() {
     setToogleMenu(true);
@@ -27,19 +42,19 @@ function NavTop() {
             </button>
             <div className="menu-list">
               <NavLink to="/" onClick={toogleClose}>
-                Home
+                {t.home}
               </NavLink>
               <NavLink to="/about" onClick={toogleClose}>
-                About
+                {t.about}
               </NavLink>
               <NavLink to="/skills" onClick={toogleClose}>
-                Skills
+                {t.skills}
               </NavLink>
               <NavLink to="/projects" onClick={toogleClose}>
-                Projects
+                {t.projects}
               </NavLink>
               <NavLink to="/contact" onClick={toogleClose}>
-                Contact
+                {t.contact}
               </NavLink>
             </div>
           </Container>
@@ -57,16 +72,24 @@ function NavTop() {
               Rmd<i id="normal">Sketch</i>.
             </Link>
           </Navbar.Brand>
-          <button className="toogle-menu" onClick={toogleOpen}>
-            <FaAlignRight />
-          </button>
+          <div className="nav-controls ms-auto d-flex align-items-center">
+            <button className="lang-toggle" onClick={toggleLanguage}>
+              <MdTranslate />
+            </button>
+            <button className="theme-toggle" onClick={toggleTheme}>
+              {theme === "light" ? <MdDarkMode /> : <MdLightMode />}
+            </button>
+            <button className="toogle-menu" onClick={toogleOpen}>
+              <FaAlignRight />
+            </button>
+          </div>
           <Nav className="navtop-list ms-auto">
             <Nav.Link className="pe-3">
               <NavLink
                 to="/"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                Home
+                {t.home}
               </NavLink>
             </Nav.Link>
             <Nav.Link className="pe-3">
@@ -74,7 +97,7 @@ function NavTop() {
                 to="/about"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                About
+                {t.about}
               </NavLink>
             </Nav.Link>
             <Nav.Link className="pe-3">
@@ -82,7 +105,7 @@ function NavTop() {
                 to="/skills"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                Skills
+                {t.skills}
               </NavLink>
             </Nav.Link>
             <Nav.Link className="pe-3">
@@ -90,7 +113,7 @@ function NavTop() {
                 to="/projects"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                Projects
+                {t.projects}
               </NavLink>
             </Nav.Link>
             <Nav.Link>
@@ -98,7 +121,7 @@ function NavTop() {
                 to="/contact"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                Contact
+                {t.contact}
               </NavLink>
             </Nav.Link>
           </Nav>

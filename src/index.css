@@ -14,9 +14,24 @@
   --first-color: #1c658c;
   --second-color: #398ab9;
   --third-color: #d8d2cb;
-  --fourth-color: #eeeeee;
+  --fourth-color: #f4f1ea;
   --five-color: #e1c16e;
   --six-color: #0d6efd;
+  
+  --bg-color: #f4f1ea;
+  --text-color: #333333;
+  --grid-color: rgba(0, 0, 0, 0.05);
+  --card-bg: #ffffff;
+  --border-color: #dddddd;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --grid-color: rgba(255, 255, 255, 0.05);
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
+  --fourth-color: #121212;
 }
 
 * {
@@ -26,7 +41,13 @@
 }
 
 body {
-  background-color: var(--fourth-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .preload {

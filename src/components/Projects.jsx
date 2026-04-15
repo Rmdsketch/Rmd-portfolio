@@ -2,10 +2,16 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { AiOutlineLink, AiFillGithub } from 'react-icons/ai';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import './CSS/Projects.css';
-import allProjects from '../assets/Routes/AllProject';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
+import './css/Projects.css';
+import allProjects from '../assets/routes/AllProject';
 
 function Projects() {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+  const navT = translations[language].nav;
+
   const [currentIndexes, setCurrentIndexes] = useState(
     allProjects.map(() => 0)
   );
@@ -32,86 +38,90 @@ function Projects() {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Muhamad Ramadani - Project</title>
+          <title>Muhamad Ramadani - {t.title}</title>
         </Helmet>
       </HelmetProvider>
 
       <Container fluid className="projects-container">
         <div className="projects-title animate__animated animate__zoomIn">
-          <h3>Projects</h3>
+          <h3>{t.title}</h3>
           <h4>
-            ───&nbsp;&nbsp;Page <strong>04</strong>
+            ───&nbsp;&nbsp;{navT.page} <strong>04</strong>
           </h4>
         </div>
 
         <div className="projects-wrapper animate__animated animate__slideInRight animate_slower my-4">
-          <div className="row custom-margin-bottom">
-            {allProjects.map((project, index) => (
-              <div className="col project-col" key={index}>
-                <div className="project-card">
-                  <div className="imgsec position-relative">
-                    <img
-                      src={project.img[currentIndexes[index]]}
-                      alt={project.title}
-                      loading="lazy"
-                      className="project-img"
-                    />
-                    {project.img.length > 1 && (
-                      <>
-                        <button
-                          className="carousel-btn prev"
-                          onClick={() => prevImage(index)}
+          <div className="row">
+            {allProjects.map((project, index) => {
+              const translatedProject = t.list[index] || { title: project.title, desc: project.description };
+              return (
+                <div className="col-lg-6 mb-5" key={index}>
+                  <div className="project-card border-0 shadow-sm h-100">
+                    <div className="imgsec">
+                      <img
+                        src={project.img[currentIndexes[index]]}
+                        alt={translatedProject.title}
+                        loading="lazy"
+                        className="project-img"
+                      />
+                      {project.img.length > 1 && (
+                        <>
+                          <button
+                            className="carousel-btn prev"
+                            onClick={() => prevImage(index)}
+                          >
+                            ‹
+                          </button>
+                          <button
+                            className="carousel-btn next"
+                            onClick={() => nextImage(index)}
+                          >
+                            ›
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    <div className="project-content p-4">
+                      <h3>{translatedProject.title}</h3>
+                      <p className="description">{translatedProject.desc}</p>
+
+                      <div className="tech-stack-tags mb-4">
+                        {project.techStack.map((tech) => (
+                          <span key={tech} className="tech-tag">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-buttons">
+                        {project.websiteUrl && (
+                          <a
+                            className={project.maintenence ? 'btn-maintenence' : 'btn-website'}
+                            href={project.websiteUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <AiOutlineLink className="project-icon" />
+                            &nbsp;&nbsp;{project.maintenence ? 'Maintenance' : 'Website'}
+                          </a>
+                        )}
+
+                        <a
+                          className="btn-github"
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
                         >
-                          ‹
-                        </button>
-                        <button
-                          className="carousel-btn next"
-                          onClick={() => nextImage(index)}
-                        >
-                          ›
-                        </button>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Konten proyek */}
-                  <div className="project-content">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-
-                    {project.websiteUrl && (
-                      <a
-                        className={project.maintenence ? 'btn-maintenence btn' : 'btn-website btn'}
-                        href={project.websiteUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <AiOutlineLink className="project-icon" />
-                        &nbsp;&nbsp;{project.maintenence ? 'Maintenance' : 'Website'}
-                      </a>
-                    )}
-
-                    <a
-                      className="btn-github"
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <AiFillGithub className="project-icon" />
-                      &nbsp;&nbsp;GitHub
-                    </a>
-
-                    <div className="d-block tech-stack-wrapper">
-                      {project.techStack.map((tech) => (
-                        <span key={tech} id="tech-stack">
-                          {tech}
-                        </span>
-                      ))}
+                          <AiFillGithub className="project-icon" />
+                          &nbsp;&nbsp;GitHub
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </Container>

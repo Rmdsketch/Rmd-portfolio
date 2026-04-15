@@ -1,46 +1,79 @@
 .navtop {
-    background-color: var(--fourth-color);
+    background-color: transparent;
 }
 
 .navtop-brand a {
     font-family: 'Source Serif Pro', serif;
     font-size: 28px !important;
     font-weight: 600;
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
 }
 
 .navtop-brand a:hover {
-    color: #000;
+    color: var(--first-color);
 }
 
 i#normal {
     font-weight: 500;
 }
 
+.nav-controls {
+    gap: 25px;
+    margin-right: 20px;
+}
+
+.lang-toggle,
+.theme-toggle {
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-toggle:hover,
+.theme-toggle:hover {
+    color: var(--first-color);
+}
+
 .navtop-list a {
     font-family: 'Manrope', sans-serif;
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.active {
-    border-bottom: 1px solid #000;
-    text-decoration: none;
-    font-weight: 600;
-    color: #000 !important;
+    color: var(--text-color);
+    opacity: 0.7;
 }
 
 .navtop-list a:hover {
-    color: #000;
+    opacity: 1;
+    color: var(--first-color);
+}
+
+.active {
+    border-bottom: 2px solid var(--first-color);
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-color) !important;
+    opacity: 1 !important;
 }
 
 .toogle-menu {
-    display: none;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     background-color: transparent;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
 }
 
 .menu {

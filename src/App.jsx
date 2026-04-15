@@ -10,6 +10,7 @@ import NavTop from "./partials/NavTop";
 import NavBot from "./partials/NavBot";
 import Footer from "./partials/Footer";
 import Home from "./components/Home";
+import { LanguageProvider } from "./context/LanguageContext";
 import "./index";
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
   }
 
   return (
-    <>
+    <LanguageProvider>
       <NavTop />
       <div className="d-flex">
         <SideVertical />
@@ -49,7 +50,7 @@ function App() {
       </div>
       <Footer />
       <NavBot />
-    </>
+    </LanguageProvider>
   );
 }
 
