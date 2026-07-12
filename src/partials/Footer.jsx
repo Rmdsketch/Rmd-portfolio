@@ -1,4 +1,5 @@
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import { SiMedium } from "react-icons/si";
 import "./css/Footer.css";
 
 function Footer() {
@@ -32,6 +33,14 @@ function Footer() {
           >
             <AiFillInstagram className="foot-icon" />
             &nbsp;&nbsp;Instagram
+          </a>
+          <a
+            href="https://medium.com/@ramadani"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SiMedium className="foot-icon" />
+            &nbsp;&nbsp;Medium
           </a>
         </div>
       </footer>
