@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaAlignRight } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 import { MdDarkMode, MdLightMode, MdTranslate } from "react-icons/md";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { useTranslation } from "react-i18next";
