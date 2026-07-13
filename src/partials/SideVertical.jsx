@@ -1,12 +1,11 @@
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../translations";
+import { useTranslation } from "react-i18next";
 import "./css/SideVertical.css";
 
 function SideVertical(props) {
-  const { language } = useLanguage();
-  const t = translations[language].nav;
+  const { t: useT } = useTranslation();
+  const t = useT('nav', { returnObjects: true });
 
   var numberPage;
   var titlePage;
@@ -24,16 +23,12 @@ function SideVertical(props) {
       numberPage = "02";
       titlePage = t.about;
       break;
-    case "/skills":
-      numberPage = "03";
-      titlePage = t.skills;
-      break;
     case "/projects":
-      numberPage = "04";
+      numberPage = "03";
       titlePage = t.projects;
       break;
     case "/contact":
-      numberPage = "05";
+      numberPage = "04";
       titlePage = t.contact;
       break;
     default:
@@ -47,11 +42,8 @@ function SideVertical(props) {
     case "/about":
       directUp = "/";
       break;
-    case "/skills":
-      directUp = "/about";
-      break;
     case "/projects":
-      directUp = "/skills";
+      directUp = "/about";
       break;
     case "/contact":
       directUp = "/projects";
@@ -65,9 +57,6 @@ function SideVertical(props) {
       directDown = "/about";
       break;
     case "/about":
-      directDown = "/skills";
-      break;
-    case "/skills":
       directDown = "/projects";
       break;
     case "/projects":
@@ -88,7 +77,7 @@ function SideVertical(props) {
         </div>
         <div className="lower-side d-flex">
           <p className="side-number">
-            {numberPage} <span className="disabled-color">/ 05</span>
+            {numberPage} <span className="disabled-color">/ 04</span>
           </p>
           <Link to={directUp} className="d-flex align-items-center pb-3 arrow">
             <AiOutlineArrowUp />

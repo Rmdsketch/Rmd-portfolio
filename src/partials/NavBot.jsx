@@ -1,12 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../translations";
+import { useTranslation } from "react-i18next";
 import "./css/NavBot.css";
 
 function NavBot() {
-  const { language } = useLanguage();
-  const t = translations[language].nav;
+  const { t: useT } = useTranslation();
+  const t = useT('nav', { returnObjects: true });
 
   var numberPage;
   var titlePage;
@@ -23,16 +22,12 @@ function NavBot() {
       numberPage = "02";
       titlePage = t.about;
       break;
-    case "/skills":
-      numberPage = "03";
-      titlePage = t.skills;
-      break;
     case "/projects":
-      numberPage = "04";
+      numberPage = "03";
       titlePage = t.projects;
       break;
     case "/contact":
-      numberPage = "05";
+      numberPage = "04";
       titlePage = t.contact;
       break;
     default:
@@ -46,11 +41,8 @@ function NavBot() {
     case "/about":
       directUp = "/";
       break;
-    case "/skills":
-      directUp = "/about";
-      break;
     case "/projects":
-      directUp = "/skills";
+      directUp = "/about";
       break;
     case "/contact":
       directUp = "/projects";
@@ -64,9 +56,6 @@ function NavBot() {
       directDown = "/about";
       break;
     case "/about":
-      directDown = "/skills";
-      break;
-    case "/skills":
       directDown = "/projects";
       break;
     case "/projects":
@@ -84,7 +73,7 @@ function NavBot() {
         <div className="navbot-left d-flex">
           <p className="navbot-title">{titlePage}</p>
           <p className="navbot-number">
-            {numberPage} <span className="disabled-color">/ 05</span>
+            {numberPage} <span className="disabled-color">/ 04</span>
           </p>
         </div>
         <div className="navbot-right d-flex">

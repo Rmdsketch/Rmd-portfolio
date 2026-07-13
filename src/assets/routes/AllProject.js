@@ -9,7 +9,7 @@ const allProjects = [
       "A DOM and Web Storage-based accounting application, created for submission to Learning to Create a Web Front-End for Beginners – Dicoding Indonesia (Front-End).",
     websiteUrl: "https://rmdsketch.github.io/Bookshelf-App/",
     githubUrl: "https://rmdsketch.github.io/Bookshelf-App/",
-    techStack: ["Javascript", "HTML5", "CSS3"],
+    techStack: ["HTML5", "CSS3", "JavaScript"],
   },
   {
     title: "Dutaku Sleman (Team Project)",
@@ -20,14 +20,15 @@ const allProjects = [
     require("../img/Project2.5.webp"),
     require("../img/Project2.6.webp"),
     require("../img/Project2.7.webp"),
-    require("../img/Project2.8.webp")
+    require("../img/Project2.8.webp"),
+    require("../img/Project2.9.webp")
     ],
     description:
       "Simple Store is a full-stack website, allowing users to add items, earn tokens, and redeem tokens.",
     websiteUrl: "https://dutaku-sleman.vercel.app/",
     githubUrl:
       "https://github.com/Rmdsketch/Dutaku-Sleman",
-    techStack: ["React", "Python", "FlaskAPI"],
+    techStack: ["JavaScript", "HTML5", "CSS3", "React", "Python", "MySQL", "Git" ],
   },
   {
     title: "Classification of Indonesian Herb Leaf Images Using CNN",
@@ -39,7 +40,7 @@ const allProjects = [
     websiteUrl: "",
     githubUrl:
       "https://github.com/Rmdsketch/Klasifikasi-Gambar-Daun-Untuk-Identifikasi-Jenis-Tanaman-menggunakan-Metode-CNN",
-    techStack: ["Python", "Machine Learning"],
+    techStack: ["Python", "PyTorch", "Git"],
   },
   {
     title: "PlantoGuard (Team Project)",
@@ -47,7 +48,7 @@ const allProjects = [
     description: "A Flutter-based mobile application that helps farmers and plant activists detect diseases in tomato plants using Machine Learning models. This application is integrated with a Flask-based backend for real-time plant image classification process",
     websiteUrl: "",
     githubUrl: "https://github.com/Rmdsketch/PlantoGuard",
-    techStack: ["Flutter", "FlaskAPI"],
+    techStack: ["Flutter", "TensorFlow", "Python", "FastAPI", "Git", "Docker"],
   },
 ];
 

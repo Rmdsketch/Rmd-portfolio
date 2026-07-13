@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import i18n from '../i18n';
 
 const LanguageContext = createContext();
 
@@ -10,7 +11,9 @@ export const LanguageProvider = ({ children }) => {
     }, [language]);
 
     const toggleLanguage = () => {
-        setLanguage((prev) => (prev === 'EN' ? 'ID' : 'EN'));
+        const newLang = language === 'EN' ? 'ID' : 'EN';
+        setLanguage(newLang);
+        i18n.changeLanguage(newLang.toLowerCase());
     };
 
     return (

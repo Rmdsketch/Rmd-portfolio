@@ -1,182 +1,221 @@
 .about-wrapper {
   display: flex;
-  justify-content: center;
-  gap: 100px;
-  padding: 0 !important;
-  margin: 0 40px 0 40px !important;
-  min-height: 550px;
-}
-
-.about-left {
-  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  margin: 0 40px !important;
+  min-height: 85vh;
+  align-items: flex-start;
+}
+
+.about-col {
+  flex: 1 1 20%;
+  min-width: 250px;
+  display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 300px;
-  padding-top: 20px;
 }
 
-.about-left h3 {
-  font-family: 'Archivo', sans-serif !important;
-  font-weight: 800 !important;
-  font-size: 50px;
-  margin: 0px;
+.col-hero {
+  flex: 0 1 20%;
+}
+
+.col-bio {
+  flex: 1 1 25%;
+}
+
+.col-exp, .col-edu {
+  flex: 1 1 25%;
+}
+
+.about-hero-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1.1;
   color: var(--text-color);
+  margin-top: 10px;
 }
 
-.about-left h4 {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 20px;
+.bio-heading {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
   color: var(--text-color);
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-.about-right {
-  display: block;
-  width: 750px;
-  height: 550px;
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-.about-right::-webkit-scrollbar {
-  width: 6px;
-}
-
-.about-right::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.about-right::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 10px;
-}
-
-.about-right::-webkit-scrollbar-thumb:hover {
-  background: var(--first-color);
-}
-
-.about-right p {
-  font-family: "Manrope", sans-serif;
-  font-size: 20px;
-  margin-bottom: 24px;
-  cursor: default;
+.col-bio p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--text-color);
+  margin-bottom: 20px;
+  opacity: 0.85;
 }
 
-.experience-section {
-  margin-top: 40px;
+.bio-image-wrapper {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.bio-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .section-title {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Archivo', sans-serif;
   font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--text-color);
   margin-bottom: 30px;
   border-bottom: 2px solid var(--first-color);
   display: inline-block;
   padding-bottom: 5px;
-  font-size: 24px;
-  color: var(--text-color);
 }
 
-.exp-content h4 {
-  font-family: 'Source Serif Pro', serif;
-  font-weight: 700;
-  margin: 0;
-  font-size: 1.3rem;
-  color: var(--text-color);
-}
-
-.company {
-  color: var(--first-color);
-  font-weight: 600;
-  margin: 4px 0;
-  font-size: 1.1rem;
-  font-family: "Manrope", sans-serif;
-}
-
-.duration {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-bottom: 12px;
-  color: var(--text-color);
-  font-family: "Manrope", sans-serif;
-}
-
-.exp-details {
+.timeline-container {
+  position: relative;
   padding-left: 20px;
-  margin-top: 10px;
-  list-style-type: disc;
+}
+
+.timeline-line-bg {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--grid-color); /* Faint track line */
+  z-index: 1;
+}
+
+.timeline-line-scroll {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--first-color);
+  box-shadow: 0 0 10px var(--first-color);
+  transform-origin: top;
+  z-index: 2;
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -27px; /* Adjust to perfectly align with the line */
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--first-color);
+  background-color: var(--bg-color);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-icon-inner {
+  width: 6px;
+  height: 6px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+.timeline-content {
+  padding-left: 10px;
+}
+
+.timeline-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
   color: var(--text-color);
+  margin-bottom: 5px;
 }
 
-.exp-details li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-  font-size: 1rem;
-  font-family: "Manrope", sans-serif;
+.timeline-highlight {
+  color: var(--text-color);
+  font-weight: 400;
 }
 
+.timeline-time {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.timeline-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  opacity: 0.85;
+}
+
+/* Responsiveness */
 @media (max-width: 1400px) {
-  .about-wrapper {
-    margin: 0 20px 0 20px !important;
+  .about-hero-title {
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 1200px) {
   .about-wrapper {
-    margin: 0 20px 0 20px !important;
-    flex-direction: column !important;
-    justify-content: start;
+    gap: 30px;
+    margin: 0 20px !important;
   }
-
-  .about-left {
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .about-right {
-    width: 100%;
-  }
-
-  .experience-item::after {
-    bottom: -35px;
+  
+  .about-col {
+    flex: 1 1 45%; /* Switch to 2x2 grid basically */
   }
 }
 
-@media (max-width: 992px) {
-  .about-left h3 {
-    font-size: 40px;
+@media (max-width: 768px) {
+  .about-col {
+    flex: 1 1 100%; /* Switch to 1x4 column stack */
   }
-
-  .about-left h4 {
-    font-size: 16px;
-  }
-
-  .about-right p {
-    font-size: 16px;
-  }
-
-  .exp-content h4 {
-    font-size: 1.1rem;
+  
+  .about-hero-title {
+    font-size: 2.5rem;
   }
 }
+.tech-stack-slider {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 300px;
+}
 
-@media (max-width: 576px) {
-  .about-wrapper {
-    margin: 0 15px 0 15px !important;
-  }
+.tech-slide {
+  text-align: center;
+}
 
-  .exp-content h4 {
-    font-size: 1rem;
-  }
-
-  .company {
-    font-size: 0.95rem;
-  }
-
-  .exp-details li {
-    font-size: 0.9rem;
-  }
+.tech-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 8px;
+  color: var(--text-color);
+  opacity: 0.9;
 }

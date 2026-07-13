@@ -1,73 +1,132 @@
+/* --- THEME VARIABLES (Light Mode Default) --- */
+:root {
+    --home-text-main: #1b1b1b;
+    --home-text-sub: #4f4f4f;
+    --btn-bg: #1b1b1b;
+    --btn-text: #ffffff;
+    --btn-hover-bg: #333333;
+}
+
+/* --- THEME VARIABLES (Dark Mode Override) --- */
+/* Adjust the selector (.dark) to match however your app toggles themes globally */
+body.dark, .dark-mode, [data-theme="dark"] {
+    --home-text-main: #ffffff;
+    --home-text-sub: #e0e0e0;
+    --btn-bg: #ffffff;
+    --btn-text: #1b1b1b;
+    --btn-hover-bg: #e6e6e6;
+}
+
+/* Base Layout */
 .home-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 0 !important;
+    align-items: center;
+    padding: 20px 0 !important;
     margin: 0 75px 0 75px !important;
+    min-height: 85vh;
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .home-left {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-}
-
-.home-right {
-    display: flex;
-    align-items: center;
-}
-
-.home-left, .home-right {
+    flex: 1;
     padding-left: 30px;
     padding-right: 30px;
 }
 
-.home-left h2 {
+.home-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Typography */
+.hero-title {
     font-family: 'Archivo', sans-serif; 
     font-weight: 800;
     font-size: 65px;
-    line-height: 75px;
+    line-height: 1.1;
     cursor: default;
+    margin-bottom: 24px;
+    color: var(--home-text-main);
+    white-space: pre-line; /* Essential: converts the \n in your JSON into actual line breaks */
+    transition: color 0.3s ease;
 }
 
-.home-left h3 {
+.hero-subtitle {
     font-family: 'Manrope', sans-serif;
-    font-weight: 200;
-    font-size: 30px;
-    cursor: default;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--home-text-sub);
+    margin-bottom: 40px;
+    max-width: 90%;
+    transition: color 0.3s ease;
 }
 
-.home-left h2 span.name-hover:hover {
-    -webkit-text-fill-color: var(--fourth-color);
-    -webkit-text-stroke-color: #000;
-    -webkit-text-stroke-width: 1px;
-}
-
+/* Image Styling */
 img.home-image {
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s ease;
 }
 
-.btn-download {
-    width: 200px;
-    padding: 12px 8px;
-    margin-top: 12px;
-    border-radius: 0px;
-    box-shadow: 8px 8px var(--third-color);
-    text-decoration: none;
+/* Action Buttons */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-resume {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 12px 28px;
+    border-radius: 8px;
     font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-    color: var(--fourth-color);
-    background-color: var(--first-color);
-    transition: 0.5s;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-download:hover {
-    color: var(--first-color);
-    background-color: var(--third-color);
-    box-shadow: 0px 0px transparent;
+.btn-resume:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-text);
+    transform: translateY(-2px);
 }
+
+.btn-icon {
+    font-size: 20px;
+    stroke-width: 2.5;
+}
+
+.btn-contact {
+    color: var(--home-text-main);
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: color 0.3s ease;
+}
+
+.btn-contact:hover {
+    color: var(--home-text-sub);
+}
+
+/* --- Media Queries for Responsiveness --- */
 
 @media (max-width: 1170px) {
     .home-wrapper {
@@ -78,36 +137,47 @@ img.home-image {
 @media (max-width: 992px) {
     .home-wrapper {
         margin: 80px 0 80px 0 !important;
+        flex-direction: column;
         text-align: center;
-        display: block;
+        align-items: flex-start; /* Important: prevents top clipping on overflow */
     }
 
     .home-left, .home-right {
         padding-left: 24px;
         padding-right: 24px;
+        width: 100%;
     }
 
-    .home-left h2 {
-        font-size: 60px;
-        margin-bottom: 14px;
+    .home-left {
+        margin-bottom: 40px;
     }
 
-    .home-right {
-        display: none !important;
+    .hero-title {
+        font-size: 50px;
+        margin-bottom: 20px;
     }
 
-    a.btn-download {
-        margin: auto;
+    .hero-subtitle {
+        max-width: 100%;
+        margin: 0 auto 30px auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
     }
 }
 
 @media (max-width: 576px) {
-    .home-left h2 {
-        font-size: 50px;
-        line-height: 70px;
+    .hero-title {
+        font-size: 40px;
+        line-height: 1.2;
     }
 
-    .home-left h3 {
-        font-size: 26px;
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .btn-resume, .btn-contact {
+        font-size: 16px;
     }
 }

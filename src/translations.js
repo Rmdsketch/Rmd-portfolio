@@ -1,172 +1,317 @@
-export const translations = {
-    EN: {
-        nav: {
-            home: "Home",
-            about: "About",
-            skills: "Skills",
-            projects: "Projects",
-            contact: "Contact",
-            page: "Page",
-        },
-        home: {
-            hi: "Hi there",
-            name: "my name is",
-            connect: "Let's Connect",
-            download_cv: "Download CV",
-        },
-        about: {
-            title: "About",
-            halo: "Hi everyone! My name is Muhamad Ramadani. I am a web developer passionate about creating modern and responsive web applications. I have a great interest in frontend and backend technologies.",
-            exp_title: "Internship Experience",
-            exp_1: {
-                role: "Frontend Developer Intern",
-                comp: "PT. MITECH GROUP ASIA",
-                dur: "Aug 2025 - Oct 2025 · 3 mos",
-                det: [
-                    "Developed the front-end interface for the Autoads Dashboard application utilizing the Ionic Framework to ensure a responsive and user-friendly experience.",
-                    "Integrated the front-end application seamlessly with Firebase as the back-end system for real-time data management.",
-                    "Managed the end-to-end data flow between the user interface and the database to ensure smooth application performance.",
-                ],
-            },
-            exp_2: {
-                role: "Laboratory Assistant",
-                comp: "Universitas Jenderal Achmad Yani Yogyakarta",
-                dur: "Feb 2026 - Present",
-                det: [
-                    "Assisted as a Lab Assistant and evaluated students weekly assignments.",
-                ],
-            },
-        },
-        skills: {
-            title: "Skills",
-            cert: "Certificates",
-            prog: "Programming Languages",
-            front: "Frontend",
-            back: "Backend",
-            other: "Others",
-        },
-        projects: {
-            title: "Projects",
-            visit: "Visit Project",
-            list: [
-                {
-                    title: "Bookshelf App",
-                    desc: "A DOM and Web Storage-based library application, created for submission to learning Create a Web Front-End for Beginners – Dicoding Indonesia.",
-                },
-                {
-                    title: "Dutaku Sleman (Team Project)",
-                    desc: "Dutaku Sleman is an application platform designed to facilitate the selection process for Tourism Ambassadors in Sleman Regency. Developed using modern technology, it empowers the Sleman Regency Tourism Office to manage, monitor, and evaluate ambassador candidates, ensuring a clear, objective, and transparent evaluation process through the use of the SAW (Simple Additive Weighting) ranking matrix.",
-                },
-                {
-                    title: "Classification of Indonesian Herb Leaf Images Using CNN",
-                    desc: "This project aims to identify plant species based on leaf images using the Convolutional Neural Network (CNN) method. The dataset used is the Indonesia Herb Leaf Dataset 3500.",
-                },
-                {
-                    title: "PlantoGuard (Team Project)",
-                    desc: "A Flutter-based mobile application that helps farmers and plant activists detect diseases in tomato plants using Machine Learning models. This application is integrated with a Flask-based backend for real-time plant image classification process.",
-                },
-            ],
-        },
-        contact: {
-            title: "Contact",
-            email: "Email",
-            copy: "Copy",
-            copied: "Copied!",
-            visit: "Visit",
-            rekrut: "Hire Me",
-            interested: "Interested in working together? Send me a message!",
-            name_placeholder: "John Doe",
-            email_placeholder: "john@example.com",
-            msg_placeholder: "I'd like to discuss a project...",
-            name_label: "Your Name",
-            email_label: "Your Email",
-            msg_label: "Message",
-            send: "Send via Email",
-        },
-    },
-    ID: {
+const translations = {
+    id: {
         nav: {
             home: "Beranda",
             about: "Tentang",
             skills: "Keahlian",
             projects: "Proyek",
+            experience: "Pengalaman",
             contact: "Kontak",
-            page: "Halaman",
         },
-        home: {
-            hi: "Halo",
-            name: "nama saya adalah",
-            connect: "Mari Terhubung",
-            download_cv: "Unduh CV",
+
+        hero: {
+            greeting: "Halo, saya",
+            name: "Muhamad Ramadani",
+            roles: [
+                "AI Engineer",
+                "Machine Learning Engineer",
+                "Computer Vision Engineer",
+                "MLOps Engineer",
+            ],
+            tagline:
+                "Fresh Graduate Informatika yang antusias membangun sistem AI end-to-end, mulai dari pelatihan model hingga integrasi ke dalam aplikasi web full-stack yang scalable.",
+            ctaPrimary: "Resume",
+            ctaSecondary: "Hubungi Saya",
         },
+
         about: {
-            title: "Tentang",
-            halo: "Halo semuanya! Nama saya Muhamad Ramadani. Saya adalah seorang pengembang web yang bersemangat menciptakan aplikasi web yang modern dan responsif. Saya memiliki ketertarikan yang besar pada teknologi frontend dan backend.",
-            exp_title: "Pengalaman Magang",
-            exp_1: {
-                role: "Magang Frontend Developer",
-                comp: "PT. MITECH GROUP ASIA",
-                dur: "Agustus 2025 - Oktober 2025",
-                det: [
-                    "Mengembangkan antarmuka front-end untuk aplikasi Autoads Dashboard menggunakan Ionic Framework agar responsif dan ramah pengguna.",
-                    "Mengintegrasikan aplikasi front-end dengan Firebase sebagai backend untuk pengelolaan data secara real-time.",
-                    "Mengelola alur data secara menyeluruh antara antarmuka pengguna dan basis data untuk memastikan performa aplikasi yang lancar.",
-                ],
-            },
-            exp_2: {
-                role: "Asisten Laboratorium",
-                comp: "Universitas Jenderal Achmad Yani Yogyakarta",
-                dur: "Februari 2026 - Sekarang",
-                det: [
-                    "Membantu sebagai asisten laboratorium serta mengevaluasi tugas mingguan mahasiswa.",
-                ],
-            },
-        },
-        skills: {
-            title: "Keahlian",
-            cert: "Sertifikat",
-            prog: "Bahasa Pemrograman",
-            front: "Frontend",
-            back: "Backend",
-            other: "Lainnya",
-        },
-        projects: {
-            title: "Proyek",
-            visit: "Kunjungi Proyek",
-            list: [
-                {
-                    title: "Aplikasi Rak Buku",
-                    desc: "Aplikasi perpustakaan berbasis DOM dan Web Storage, dibuat untuk pengajuan tugas  pembelajaran membuat Front-End Web untuk pemula – Dicoding Indonesia.",
-                },
-                {
-                    title: "Dutaku Sleman (Proyek Tim)",
-                    desc: "Dutaku Sleman adalah platform aplikasi yang dirancang untuk memfasilitasi mekanisme seleksi Duta Pariwisata di Kabupaten Sleman. Dikembangkan dengan teknologi modern untuk memberdayakan Dinas Pariwisata Kabupaten Sleman dalam mengelola, memantau, mengevaluasi kandidat duta (alternatif), memastikan proses analisis yang jelas, objektif, dan transparan dengan menggunakan matriks pengurutan metode SAW (Simple Additive Weighting).",
-                },
-                {
-                    title: "Klasifikasi Gambar Daun Herbal Indonesia Menggunakan CNN",
-                    desc: "Proyek ini bertujuan untuk mengidentifikasi spesies tanaman berdasarkan gambar daun menggunakan metode Convolutional Neural Network (CNN). Kumpulan data yang digunakan adalah Indonesia Herb Leaf Dataset 3500.",
-                },
-                {
-                    title: "PlantoGuard (Proyek Tim)",
-                    desc: "Aplikasi mobile berbasis Flutter yang membantu petani dan aktivis tanaman mendeteksi penyakit pada tanaman tomat menggunakan model Machine Learning. Aplikasi ini terintegrasi dengan backend berbasis Flask untuk proses klasifikasi gambar tanaman secara real-time.",
-                },
+            title: "Tentang Saya",
+            description:
+                "Saya adalah lulusan baru Informatika dengan minat besar pada Artificial Intelligence, Machine Learning, Deep Learning, dan Computer Vision. Saya memiliki pengalaman membangun sistem AI end-to-end dengan mengintegrasikan model machine learning ke dalam aplikasi web full-stack yang scalable menggunakan PyTorch, YOLO, FastAPI, React, WebSocket, Docker, dan Git.",
+            focusTitle: "Fokus Karier",
+            focusDescription:
+                "Saat ini saya mencari kesempatan sebagai AI Engineer, Machine Learning Engineer, Computer Vision Engineer atau MLOps Engineer untuk mengembangkan solusi AI yang scalable, siap produksi, dan memberikan dampak nyata di dunia industri.",
+            highlights: [
+                "Data Preprocessing & Model Training",
+                "Model Evaluation & Deployment",
+                "REST API Development",
+                "Real-time Inference",
+                "Frontend Integration",
+                "Containerization & Version Control",
             ],
         },
+
+        skills: {
+            title: "Keahlian Teknis",
+            categories: {
+                aiMl: {
+                    title: "AI & Machine Learning",
+                    items: [
+                        "PyTorch",
+                        "YOLO (Object Detection)",
+                        "Deep Learning",
+                        "Computer Vision",
+                        "Model Training & Evaluation",
+                        "Model Deployment",
+                    ],
+                },
+                webDev: {
+                    title: "Web Development",
+                    items: [
+                        "FastAPI",
+                        "React",
+                        "WebSocket",
+                        "REST API Development",
+                        "Real-time Inference Integration",
+                    ],
+                },
+                toolsDevOps: {
+                    title: "Tools & DevOps",
+                    items: ["Docker", "Git", "Containerization", "Version Control"],
+                },
+            },
+        },
+
+        experience: {
+            title: "Pengalaman & Kompetensi",
+            competenceTitle: "Kompetensi",
+            internshipTitle: "Pengalaman",
+            summary:
+                "Berpengalaman merancang dan membangun sistem AI end-to-end — mulai dari preprocessing data, pelatihan dan evaluasi model, hingga deployment model ke dalam aplikasi web production-ready dengan integrasi inferensi real-time.",
+            competenceItems: [
+                {
+                    role: "AI/ML System Development",
+                    description:
+                        "Mengintegrasikan model machine learning ke dalam aplikasi web full-stack yang scalable.",
+                },
+                {
+                    role: "Model Training & Evaluation",
+                    description:
+                        "Melakukan preprocessing data, pelatihan model, serta evaluasi performa model secara menyeluruh.",
+                },
+                {
+                    role: "Deployment & Real-time Inference",
+                    description:
+                        "Melakukan deployment model dan membangun sistem inferensi real-time menggunakan WebSocket dan FastAPI.",
+                }
+            ],
+            internshipItems: [
+                {
+                    role: "Akademi AWS AI",
+                    comp: "Dicoding Indonesia",
+                    dur: "Apr 2026 - Saat ini · 4 bln | Bandung, Jawa Barat, Indonesia · Remote",
+                    description: "Berpartisipasi dalam AWS AI Academy pada tahun 2026, sebuah program pembelajaran terstruktur yang berfokus pada Kecerdasan Buatan, Komputasi Awan, Pembelajaran Mesin, dan AI Generatif.\nArea pembelajaran utama:\n- Pemrograman Python\n- Dasar-dasar Komputasi Awan di AWS\n- Dasar-dasar Pembelajaran Mesin\n- Konsep dan Aplikasi AI Generatif"
+                },
+                {
+                    role: "AI Mini Camp",
+                    comp: "Dicoding Indonesia",
+                    dur: "Jun 2026 · 1 bln",
+                    description: "Berpartisipasi dalam AI Mini Camp pada tahun 2026, sebuah program pembelajaran terstruktur yang berfokus pada Kecerdasan Buatan dan AI Generatif melalui kursus terpandu dan latihan praktis.\nArea pembelajaran utama:\n- Dasar-dasar Kecerdasan Buatan\n- Konsep dan Aplikasi AI Generatif\n- Rekayasa Prompt\n- Produktivitas Berbantuan AI dan Otomatisasi Alur Kerja\n- Aplikasi AI Praktis untuk Pemecahan Masalah Dunia Nyata"
+                },
+                {
+                    role: "Asisten Laboratorium",
+                    comp: "Universitas Jenderal Achmad Yani Yogyakarta",
+                    dur: "Feb 2026 - Jun 2026 · 5 bln | Gamping, Daerah Istimewa Yogyakarta, Indonesia · On-site",
+                    description: "Membantu sebagai Asisten Laboratorium dan mengevaluasi tugas mingguan mahasiswa."
+                },
+                {
+                    role: "Badan Ekraf Digital Talent (BDT)",
+                    comp: "Baparekraf Digital Talent",
+                    dur: "Apr 2026 - Mei 2026 · 2 bln | Jakarta, Indonesia · Remote",
+                    description: "Terpilih sebagai penerima beasiswa program Badan Ekraf Digital Talent (BDT) 2026, inisiatif Kementerian Pariwisata dan Ekonomi Kreatif (Kemenparekraf/Baparekraf) bekerja sama dengan Dicoding Indonesia. Program ini berfokus pada peningkatan kapasitas talenta kreatif digital Indonesia, khususnya dalam pengembangan AI."
+                },
+                {
+                    role: "Magang Pengembang Perangkat Lunak (Front-End)",
+                    comp: "PT. MITECH GROUP ASIA",
+                    dur: "Agt 2025 - Okt 2025 · 3 bln | Sukoharjo, Jawa Tengah, Indonesia · On-site",
+                    description: "- Mengembangkan antarmuka front-end untuk aplikasi Autoads Dashboard menggunakan Ionic Framework untuk memastikan pengalaman yang responsif dan ramah pengguna.\n- Mengintegrasikan aplikasi front-end secara mulus dengan Firebase sebagai sistem back-end untuk manajemen data real-time.\n- Mengelola alur data ujung-ke-ujung antara antarmuka pengguna dan basis data untuk memastikan kinerja aplikasi yang lancar."
+                }
+            ],
+        },
+
+        projects: {
+            title: "Proyek",
+            viewProject: "Lihat Proyek",
+            viewCode: "Lihat Kode",
+            technologies: "Teknologi",
+        },
+
         contact: {
-            title: "Kontak",
-            email: "Email",
-            copy: "Salin",
-            copied: "Tersalin!",
-            visit: "Kunjungi",
-            rekrut: "Rekrut Saya",
-            interested: "Tertarik bekerja sama? Kirim pesan kepada saya!",
-            name_placeholder: "John Doe",
-            email_placeholder: "john@gmail.com",
-            msg_placeholder: "Saya ingin mendiskusikan sebuah proyek...",
-            name_label: "Nama Anda",
-            email_label: "Email Anda",
-            msg_label: "Pesan",
-            send: "Kirim via Email",
+            title: "Hubungi Saya",
+            description:
+                "Terbuka untuk kesempatan sebagai AI Engineer, Machine Learning Engineer, Computer Vision Engineer, atau MLOps Engineer. Jangan ragu untuk menghubungi saya.",
+            form: {
+                name: "Nama",
+                email: "Email",
+                message: "Pesan",
+                send: "Kirim Pesan",
+            },
+            emailLabel: "Email",
+            linkedinLabel: "LinkedIn",
+            githubLabel: "GitHub",
+        },
+
+        footer: {
+            rights: "Seluruh hak cipta dilindungi.",
+        },
+    },
+
+    en: {
+        nav: {
+            home: "Home",
+            about: "About",
+            skills: "Skills",
+            projects: "Projects",
+            experience: "Experience",
+            contact: "Contact",
+        },
+
+        hero: {
+            greeting: "Hello, I'm",
+            name: "Muhamad Ramadani",
+            roles: [
+                "AI Engineer",
+                "Machine Learning Engineer",
+                "Computer Vision Engineer",
+                "MLOps Engineer",
+            ],
+            tagline:
+                "Fresh Graduate in Informatics passionate about building end-to-end AI systems, from model training to integration into scalable full-stack web applications.",
+            ctaPrimary: "Resume",
+            ctaSecondary: "Contact Me",
+        },
+
+        about: {
+            title: "About Me",
+            description:
+                "Fresh Graduate in Informatics passionate about Artificial Intelligence, Machine Learning, Deep Learning, and Computer Vision. Experienced in building end-to-end AI systems by integrating machine learning models into scalable full-stack web applications using PyTorch, YOLO, FastAPI, React, WebSocket, Docker and Git.",
+            focusTitle: "Career Focus",
+            focusDescription:
+                "Currently seeking opportunities as an AI Engineer, Machine Learning Engineer, Computer Vision Engineer, or MLOps Engineer to develop scalable, production-ready AI solutions that deliver real-world impact.",
+            highlights: [
+                "Data Preprocessing & Model Training",
+                "Model Evaluation & Deployment",
+                "REST API Development",
+                "Real-time Inference",
+                "Frontend Integration",
+                "Containerization & Version Control",
+            ],
+        },
+
+        skills: {
+            title: "Technical Skills",
+            categories: {
+                aiMl: {
+                    title: "AI & Machine Learning",
+                    items: [
+                        "PyTorch",
+                        "YOLO (Object Detection)",
+                        "Deep Learning",
+                        "Computer Vision",
+                        "Model Training & Evaluation",
+                        "Model Deployment",
+                    ],
+                },
+                webDev: {
+                    title: "Web Development",
+                    items: [
+                        "FastAPI",
+                        "React",
+                        "WebSocket",
+                        "REST API Development",
+                        "Real-time Inference Integration",
+                    ],
+                },
+                toolsDevOps: {
+                    title: "Tools & DevOps",
+                    items: ["Docker", "Git", "Containerization", "Version Control"],
+                },
+            },
+        },
+
+        experience: {
+            title: "Experience & Expertise",
+            competenceTitle: "Expertise",
+            internshipTitle: "Experience",
+            summary:
+                "Experienced in designing and building end-to-end AI systems — from data preprocessing, model training and evaluation, to deploying models into production-ready web applications with real-time inference integration.",
+            competenceItems: [
+                {
+                    role: "AI/ML System Development",
+                    description:
+                        "Integrating machine learning models into scalable full-stack web applications.",
+                },
+                {
+                    role: "Model Training & Evaluation",
+                    description:
+                        "Performing data preprocessing, model training, and comprehensive model performance evaluation.",
+                },
+                {
+                    role: "Deployment & Real-time Inference",
+                    description:
+                        "Deploying models and building real-time inference systems using WebSocket and FastAPI.",
+                }
+            ],
+            internshipItems: [
+                {
+                    role: "AWS AI Academy",
+                    comp: "Dicoding Indonesia",
+                    dur: "Apr 2026 - Present · 4 mos | Bandung, West Java, Indonesia · Remote",
+                    description: "Participated in the AWS AI Academy in 2026, a structured learning program focused on Artificial Intelligence, Cloud Computing, Machine Learning and Generative AI.\nKey learning areas:\n- Python Programming\n- Cloud Computing Fundamentals on AWS\n- Machine Learning Fundamentals\n- Generative AI Concepts and Applications"
+                },
+                {
+                    role: "AI Mini Camp",
+                    comp: "Dicoding Indonesia",
+                    dur: "Jun 2026 · 1 mo | Bandung, West Java, Indonesia · Remote",
+                    description: "Participated in the AI Mini Camp in 2026, a structured learning program focused on Artificial Intelligence and Generative AI through guided coursework and practical exercises.\nKey learning areas:\n- Artificial Intelligence Fundamentals\n- Generative AI Concepts and Applications\n- Prompt Engineering\n- AI-Assisted Productivity and Workflow Automation\n- Practical AI Applications for Real-World Problem Solving"
+                },
+                {
+                    role: "Laboratory Assistant",
+                    comp: "Jenderal Achmad Yani Yogyakarta University",
+                    dur: "Feb 2026 - Jun 2026 · 5 mos | Gamping, Special Region of Yogyakarta, Indonesia · On-site",
+                    description: "Assisted as a Lab Assistant and evaluated students weekly assignments."
+                },
+                {
+                    role: "Creative Digital Talent Agency (BDT)",
+                    comp: "Baparekraf Digital Talent",
+                    dur: "Apr 2026 - May 2026 · 2 mos | Jakarta, Indonesia · Remote",
+                    description: "Selected as a scholarship recipient for the Badan Ekraf Digital Talent (BDT) 2026 program, an initiative by the Ministry of Creative Economy (Kemenparekraf/Baparekraf) in collaboration with Dicoding Indonesia. This program focuses on enhancing the capacity of Indonesia's digital creative talents, specifically in AI development."
+                },
+                {
+                    role: "Software Engineer Intern (Front-End)",
+                    comp: "PT. MITECH GROUP ASIA",
+                    dur: "Aug 2025 - Oct 2025 · 3 mos | Sukoharjo, Central Java, Indonesia · On-site",
+                    description: "- Developed the front-end interface for the Autoads Dashboard application utilizing the Ionic Framework to ensure a responsive and user-friendly experience.\n- Integrated the front-end application seamlessly with Firebase as the back-end system for real-time data management.\n- Managed the end-to-end data flow between the user interface and the database to ensure smooth application performance."
+                }
+            ],
+        },
+
+        projects: {
+            title: "Projects",
+            viewProject: "View Project",
+            viewCode: "View Code",
+            technologies: "Technologies",
+        },
+
+        contact: {
+            title: "Get In Touch",
+            description:
+                "Open to opportunities as an AI Engineer, Machine Learning Engineer, Computer Vision Engineer or MLOps Engineer. Feel free to reach out.",
+            form: {
+                name: "Name",
+                email: "Email",
+                message: "Message",
+                send: "Send Message",
+            },
+            emailLabel: "Email",
+            linkedinLabel: "LinkedIn",
+            githubLabel: "GitHub",
+        },
+
+        footer: {
+            rights: "All rights reserved.",
         },
     },
 };
+
+export default translations;

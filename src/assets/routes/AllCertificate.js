@@ -13,6 +13,17 @@ import Certificate12 from "../img/Certificate12.webp";
 import Certificate13 from "../img/Certificate13.webp";
 import Certificate14 from "../img/Certificate14.webp";
 import Certificate15 from "../img/Certificate15.webp";
+import Certificate16 from "../img/Certificate16.webp";
+import Certificate17 from "../img/Certificate17.webp";
+import Certificate18 from "../img/Certificate18.webp";
+import Certificate19 from "../img/Certificate19.webp";
+import Certificate20 from "../img/Certificate20.webp";
+// import Certificate21 from "../img/Certificate21.webp";
+// import Certificate22 from "../img/Certificate22.webp";
+// import Certificate23 from "../img/Certificate23.webp";
+// import Certificate24 from "../img/Certificate24.webp";
+// import Certificate25 from "../img/Certificate25.webp";
+// add more certificate images as needed
 
 const certificateImages = [
   Certificate1,
@@ -30,6 +41,16 @@ const certificateImages = [
   Certificate13,
   Certificate14,
   Certificate15,
+  Certificate16,
+  Certificate17,
+  Certificate18,
+  Certificate19,
+  Certificate20,
+  // Certificate21,
+  // Certificate22,
+  // Certificate23,
+  // Certificate24,
+  // Certificate25,
 ];
 
 export default certificateImages;

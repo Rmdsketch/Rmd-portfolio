@@ -4,13 +4,13 @@ import { Spinner } from "react-bootstrap";
 import SideVertical from "./partials/SideVertical";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Skills from "./components/Skills";
 import About from "./components/About";
 import NavTop from "./partials/NavTop";
 import NavBot from "./partials/NavBot";
 import Footer from "./partials/Footer";
 import Home from "./components/Home";
 import { LanguageProvider } from "./context/LanguageContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./index";
 
 function App() {
@@ -36,21 +36,22 @@ function App() {
   }
 
   return (
-    <LanguageProvider>
-      <NavTop />
-      <div className="d-flex">
-        <SideVertical />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/skills" element={<Skills />}></Route>
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-        </Routes>
-      </div>
-      <Footer />
-      <NavBot />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <NavTop />
+        <div className="d-flex">
+          <SideVertical />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/projects" element={<Projects />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+          </Routes>
+        </div>
+        <Footer />
+        <NavBot />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

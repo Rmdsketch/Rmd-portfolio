@@ -2,15 +2,14 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { AiOutlineLink, AiFillGithub } from 'react-icons/ai';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useLanguage } from '../context/LanguageContext';
-import { translations } from '../translations';
+import { useTranslation } from 'react-i18next';
 import './css/Projects.css';
 import allProjects from '../assets/routes/AllProject';
 
 function Projects() {
-  const { language } = useLanguage();
-  const t = translations[language].projects;
-  const navT = translations[language].nav;
+  const { t: useT } = useTranslation();
+  const t = useT('projects', { returnObjects: true });
+  const navT = useT('nav', { returnObjects: true });
 
   const [currentIndexes, setCurrentIndexes] = useState(
     allProjects.map(() => 0)
@@ -38,7 +37,7 @@ function Projects() {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Muhamad Ramadani - {t.title}</title>
+          <title>Muhamad Ramadani - {navT.projects}</title>
         </Helmet>
       </HelmetProvider>
 
@@ -46,23 +45,29 @@ function Projects() {
         <div className="projects-title animate__animated animate__zoomIn">
           <h3>{t.title}</h3>
           <h4>
-            ───&nbsp;&nbsp;{navT.page} <strong>04</strong>
+            ───&nbsp;&nbsp;{navT.page} <strong>03</strong>
           </h4>
         </div>
 
         <div className="projects-wrapper animate__animated animate__slideInRight animate_slower my-4">
           <div className="row">
             {allProjects.map((project, index) => {
-              const translatedProject = t.list[index] || { title: project.title, desc: project.description };
+              const translatedProject = t.list?.[index] || { title: project.title, desc: project.description };
               return (
                 <div className="col-lg-6 mb-5" key={index}>
                   <div className="project-card border-0 shadow-sm h-100">
                     <div className="imgsec">
                       <img
                         src={project.img[currentIndexes[index]]}
+                        alt=""
+                        loading="lazy"
+                        className="project-img-blur"
+                      />
+                      <img
+                        src={project.img[currentIndexes[index]]}
                         alt={translatedProject.title}
                         loading="lazy"
-                        className="project-img"
+                        className="project-img-front"
                       />
                       {project.img.length > 1 && (
                         <>
@@ -103,7 +108,7 @@ function Projects() {
                             rel="noreferrer"
                           >
                             <AiOutlineLink className="project-icon" />
-                            &nbsp;&nbsp;{project.maintenence ? 'Maintenance' : 'Website'}
+                            &nbsp;&nbsp;{project.maintenence ? 'Maintenance' : (t.viewProject || 'Website')}
                           </a>
                         )}
 
@@ -114,7 +119,7 @@ function Projects() {
                           rel="noreferrer"
                         >
                           <AiFillGithub className="project-icon" />
-                          &nbsp;&nbsp;GitHub
+                          &nbsp;&nbsp;{t.viewCode || 'GitHub'}
                         </a>
                       </div>
                     </div>

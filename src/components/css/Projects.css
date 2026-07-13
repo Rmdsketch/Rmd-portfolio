@@ -16,9 +16,7 @@
 
 .projects-wrapper {
   height: auto;
-  overflow: hidden;
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
+  overflow: visible;
 }
 
 .project-card {
@@ -40,15 +38,29 @@
   background-color: var(--bg-color);
 }
 
-.imgsec img {
+.project-img-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover !important;
-  padding: 0 !important;
+  filter: blur(15px);
+  opacity: 0.5;
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.project-img-front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  z-index: 1;
 }
 
 .project-content h3 {
-  font-family: "Source Serif Pro", serif;
+  font-family: "Archivo", sans-serif;
   font-weight: 700;
   font-size: 22px;
   color: var(--text-color);

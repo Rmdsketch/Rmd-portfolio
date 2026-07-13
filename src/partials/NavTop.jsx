@@ -5,23 +5,16 @@ import { GrClose } from "react-icons/gr";
 import { MdDarkMode, MdLightMode, MdTranslate } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import { translations } from "../translations";
+import { useTheme } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 import "./css/NavTop.css";
 
 function NavTop() {
   const [toogleMenu, setToogleMenu] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const { language, toggleLanguage } = useLanguage();
-  const t = translations[language].nav;
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+  const { theme, toggleTheme } = useTheme();
+  const { toggleLanguage } = useLanguage();
+  const { t: useT } = useTranslation();
+  const t = useT('nav', { returnObjects: true });
 
   function toogleOpen() {
     setToogleMenu(true);
@@ -46,9 +39,6 @@ function NavTop() {
               </NavLink>
               <NavLink to="/about" onClick={toogleClose}>
                 {t.about}
-              </NavLink>
-              <NavLink to="/skills" onClick={toogleClose}>
-                {t.skills}
               </NavLink>
               <NavLink to="/projects" onClick={toogleClose}>
                 {t.projects}
@@ -98,14 +88,6 @@ function NavTop() {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 {t.about}
-              </NavLink>
-            </Nav.Link>
-            <Nav.Link className="pe-3">
-              <NavLink
-                to="/skills"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                {t.skills}
               </NavLink>
             </Nav.Link>
             <Nav.Link className="pe-3">
